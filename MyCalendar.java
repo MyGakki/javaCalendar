@@ -11,10 +11,10 @@ public class MyCalendar {
 	public static void main(String[] args) {
 		Calendar calendar = Calendar.getInstance();
 		while (true) {
-			System.out.println("Êä³öÈÕÀúÇëÊäÈë1£¬Êä³öĞÇÆÚÇëÊäÈë2");
+			System.out.println("è¾“å‡ºæ—¥å†è¯·è¾“å…¥1ï¼Œè¾“å‡ºæ˜ŸæœŸè¯·è¾“å…¥2");
 			int code = new Scanner(System.in).nextInt();
 			if (code == 1) {
-				System.out.println("ÇëÊäÈëÄê·İ£¨ÀıÈç2017£©£º");
+				System.out.println("è¯·è¾“å…¥å¹´ä»½ï¼ˆä¾‹å¦‚2017ï¼‰ï¼š");
 				int year = new Scanner(System.in).nextInt();
 				calendar.set(Calendar.YEAR, year);
 				for (int i = 0; i < 12; i++) {
@@ -24,10 +24,10 @@ public class MyCalendar {
 				}
 				System.out.println();
 			} else if (code == 2) {
-				System.out.println("ÇëÊäÈëÈÕÆÚ£¨ÀıÈç£º2017-01-01£©£º");
+				System.out.println("è¯·è¾“å…¥æ—¥æœŸï¼ˆä¾‹å¦‚ï¼š2017-01-01ï¼‰ï¼š");
 				String string = new Scanner(System.in).nextLine();
-				SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-mm-dd");
-				String[] dayOfWeek = {"ÖÜÈÕ","ÖÜÒ»","ÖÜ¶ş","ÖÜÈı","ÖÜËÄ","ÖÜÎå","ÖÜÁù"};
+				SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+				String[] dayOfWeek = {"å‘¨æ—¥","å‘¨ä¸€","å‘¨äºŒ","å‘¨ä¸‰","å‘¨å››","å‘¨äº”","å‘¨å…­"};
 				try {
 					Date date = simpleDateFormat.parse(string);
 					calendar.setTime(date);
@@ -40,9 +40,9 @@ public class MyCalendar {
 	}
 
 	private static void printCalendar(Calendar calendar) {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
-		System.out.print("\n\n                     " + (calendar.get(Calendar.MONTH) + 1) + "ÔÂ" + "              \n");
-		String string = "ÈÕ\tÒ»\t¶ş\tÈı\tËÄ\tÎå\tÁù\n";
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
+		System.out.print("\n\n                     " + (calendar.get(Calendar.MONTH) + 1) + "æœˆ" + "              \n");
+		String string = "æ—¥\tä¸€\täºŒ\tä¸‰\tå››\täº”\tå…­\n";
 		System.out.println(string);
 		for (int i = 0; i < calendar.get(Calendar.DAY_OF_WEEK) - 1; i++) {
 			System.out.print("\t");
